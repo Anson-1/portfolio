@@ -93,23 +93,23 @@ export const projects: Project[] = [
     status: "completed",
   },
   {
-    title: "Real-time Data Pipeline",
-    slug: "realtime-data-pipeline",
+    title: "COVID-19 Prediction with Neural Networks",
+    slug: "covid19-prediction",
     description:
-      "End-to-end streaming pipeline processing financial market data with Redpanda, TimescaleDB, and Grafana.",
+      "Built and compared 5 neural network architectures (2–5 hidden layers) in Keras to predict COVID-19 infection risk from demographic data.",
     longDescription:
-      "Designed and implemented a real-time data pipeline using Redpanda (Kafka-compatible) for message streaming, Python consumers for VWAP and moving average computation, TimescaleDB for time-series storage, and Grafana for real-time dashboards. Entire stack runs via docker-compose.",
+      "Developed multiple neural network classifiers using Keras/TensorFlow to predict COVID-19 infection risk based on demographic and clinical features. Trained 5 models with varying architectures (2 to 5 hidden layers), compared their accuracy, and generated predictions on unseen test data. Part of HKUST MSBD5002 Data Mining and Knowledge Discovery coursework.",
     highlights: [
-      "Redpanda (Kafka-compatible) for lightweight message streaming",
-      "Python producer fetching live stock prices via yfinance",
-      "Real-time VWAP and moving average computation",
-      "TimescaleDB for optimized time-series storage",
-      "Grafana dashboard with real-time charts",
-      "Single docker-compose.yml spins up entire stack",
+      "5 neural network architectures with 2–5 hidden layers",
+      "Binary classification on demographic and clinical features",
+      "Keras/TensorFlow with Adam optimizer and binary crossentropy",
+      "Model comparison and hyperparameter tuning across architectures",
+      "Prediction generation on held-out test data",
     ],
-    tags: ["Redpanda", "Docker", "TimescaleDB", "Grafana", "Python"],
-    category: "data-eng",
-    status: "planned",
+    tags: ["Python", "Keras", "TensorFlow", "Neural Networks", "Data Mining"],
+    category: "ml",
+    github: "https://github.com/Anson-1/MSBD5002-Data-Mining-and-Knowledge-Discovery",
+    status: "completed",
   },
 ];
 
