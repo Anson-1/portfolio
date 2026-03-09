@@ -116,7 +116,5 @@ export const projects: Project[] = [
 export const categories = {
   all: "All Projects",
   ml: "ML / Data Science",
-  "data-eng": "Data Engineering",
   quant: "Quant / Finance",
-  fullstack: "Full Stack",
 } as const;
