@@ -5,13 +5,52 @@ export interface Project {
   longDescription: string;
   highlights: string[];
   tags: string[];
-  category: "ml" | "data-eng" | "quant" | "fullstack";
+  category: "ml" | "llm" | "quant" | "fullstack";
   github?: string;
   demo?: string;
   status: "completed" | "in-progress" | "planned";
 }
 
 export const projects: Project[] = [
+  {
+    title: "RAG PDF Q&A",
+    slug: "rag-pdf-qa",
+    description:
+      "Chat with your PDF documents using Retrieval-Augmented Generation — sentence-transformers embeddings, FAISS vector search, and HuggingFace LLM with source citations.",
+    longDescription:
+      "Built a complete RAG pipeline from scratch: PDF text extraction and recursive chunking, sentence-transformers embeddings (all-MiniLM-L6-v2, 384-dim), FAISS index with cosine similarity search, and HuggingFace Inference API (Qwen2.5-72B) for grounded answer generation. Features conversational memory, configurable chunking parameters, and source citations with page numbers and similarity scores.",
+    highlights: [
+      "RAG pipeline built from primitives — not a LangChain wrapper",
+      "sentence-transformers (all-MiniLM-L6-v2) for 384-dim embeddings",
+      "FAISS vector store with cosine similarity (inner product on normalized vectors)",
+      "HuggingFace Inference API (Qwen2.5-72B / Llama 3.1 / Mixtral) with source-grounded prompting",
+      "Conversational memory with rolling chat history",
+      "Configurable chunk size, overlap, and top-K retrieval",
+    ],
+    tags: ["Python", "FAISS", "sentence-transformers", "HuggingFace", "RAG", "Streamlit"],
+    category: "llm",
+    github: "https://github.com/Anson-1/rag-pdf-qa",
+    status: "completed",
+  },
+  {
+    title: "AI Research Agent",
+    slug: "ai-agent-researcher",
+    description:
+      "ReAct-based AI agent that reasons step-by-step, calls tools (web search, stock data, calculator), and synthesizes financial research answers.",
+    longDescription:
+      "Built a ReAct (Reason + Act) agent from scratch that iteratively reasons about a user query, selects and calls tools, observes the results, and synthesizes a final answer. Tools include DuckDuckGo web search, yfinance stock price and financials retrieval, and a math calculator. The agent's full reasoning trace is displayed in a Streamlit UI. Powered by HuggingFace Inference API.",
+    highlights: [
+      "ReAct framework (Thought → Action → Observation → Final Answer) built from scratch",
+      "4 tools: web search (DuckDuckGo), stock prices, financials (yfinance), calculator",
+      "Full reasoning trace visible in the UI — shows how the agent thinks",
+      "HuggingFace Inference API (Qwen2.5-72B / Llama 3.1 / Mixtral)",
+      "Conversational query history with tool call counts",
+    ],
+    tags: ["Python", "ReAct", "HuggingFace", "yfinance", "Agents", "Streamlit"],
+    category: "llm",
+    github: "https://github.com/Anson-1/ai-agent-researcher",
+    status: "completed",
+  },
   {
     title: "HK Stock Market Predictor",
     slug: "hk-stock-predictor",
@@ -115,6 +154,7 @@ export const projects: Project[] = [
 
 export const categories = {
   all: "All Projects",
+  llm: "LLM / GenAI",
   ml: "ML / Data Science",
   quant: "Quant / Finance",
 } as const;

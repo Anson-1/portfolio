@@ -58,8 +58,8 @@ export default async function ProjectPage({
         <span className="text-xs text-zinc-400">
           {project.category === "ml"
             ? "ML / Data Science"
-            : project.category === "data-eng"
-              ? "Data Engineering"
+            : project.category === "llm"
+              ? "LLM / GenAI"
               : project.category === "quant"
                 ? "Quant / Finance"
                 : "Full Stack"}
